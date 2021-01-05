@@ -12,7 +12,7 @@ def fetchall1(self):
     self = self - 1
     for item in tuple1:#遍历数据库数据元组
         list1.append(item[self])#将遍历的项添加入列表里
-        list1 = sorted(list1)#将列表里的信息按照从大到小，从a-z的顺序排列
+        list1 = sorted(list1,key=str.lower,reverse=False)#将列表里的信息按照不区分大小写，降序顺排列
     sql2 = """select * from dictionary where id=? or word=?;"""#SQL语句查询
     list2 = []#定义一个空列表
     for i in list1:#遍历传递的列表参数
